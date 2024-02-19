@@ -1,0 +1,23 @@
+#!/bin/sh
+
+
+a=`echo $1`
+
+a=`echo $a | sed 's/pretty|beautiful/pretti/g'`
+a=`echo $a | sed 's/rl/w/g'`
+a=`echo $a | sed 's/r/w/g'`
+a=`echo $a | sed 's/l/w/g'`
+a=`echo $a | sed 's/ow/ao/g'`
+a=`echo $a | sed 's/\bthis\b/dis/g'`
+a=`echo $a | sed 's/na/nya/g'`
+a=`echo $a | sed 's/(?<![b-df-hj-np-tv-xzB-DF-HJ-NP-TV-XZ])u/wu/g'`
+a=`echo $a | sed 's/y/yie/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])e[iya]/yei/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])ie/yie/g' `
+a=`echo $a | sed 's/(?<![aeiouAEIOU])a[e]/yae/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])ai/yai/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])o[ou]/yu/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])oe/yo/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])u[eu]/yeu/g'`
+a=`echo $a | sed 's/(?<![aeiouAEIOU])e[u]/yeu/g'`
+echo $a | sed 's/o[uo]/ew/g'
