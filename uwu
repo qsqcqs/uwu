@@ -1,23 +1,64 @@
-#!/bin/sh
+#!/bin/python
 
+import re
+import sys
+b=0
+if len(sys.argv) > 1:
+	b=sys.argv[1:]			
+	a=b[0]
+	b=b[1:]
+	while len(b) > 0:
+		a=a+' '+b[0]
+		b=b[1:]		
+	a=re.sub("thats","nyas",a)
+	a=re.sub("pretty|beautiful","pwetti",a)
+	a=re.sub("rl","w",a)
+	a=re.sub("r","w",a)
+	a=re.sub("l","w",a)
+	a=re.sub("ow","ao",a)
+	a=re.sub("tha","nya",a)
+	a=re.sub("(?<=\b)this(?=\b)","dis",a)
+	a=re.sub("na","nya",a)
+	a=re.sub("th","f",a)
+	a=re.sub("(?<![b-df-hj-np-tv-xzB-DF-HJ-NP-TV-XZ])u","wu",a)
+	a=re.sub("y","yie",a)
+	a=re.sub("(?<![aeiouAEIOU])e[iya]","yei",a)
+	a=re.sub("(?<![aeiouAEIOU])ie","yie",a)
+	a=re.sub("(?<![aeiouAEIOU])a[e]","yae",a)
+	a=re.sub("(?<![aeiouAEIOU])ai","yai",a)
+	a=re.sub("(?<![aeiouAEIOU])o[ou]","yu",a)
+	a=re.sub("(?<![aeiouAEIOU])oe","yo",a)
+	a=re.sub("(?<![aeiouAEIOU])u[eu]","yeu",a)
+	a=re.sub("(?<![aeiouAEIOU])e[u]","yeu",a)
+	a=re.sub("o[uo]","ew",a)
+	print(a)
+	exit()
 
-a=`echo $1`
+while b==0:
+		try:
+			a=input()
+			a=re.sub("thats","nyas",a)
+			a=re.sub("pretty|beautiful","pwetti",a)
+			a=re.sub("rl","w",a)
+			a=re.sub("r","w",a)
+			a=re.sub("l","w",a)
+			a=re.sub("ow","ao",a)
+			a=re.sub("tha","nya",a)
+			a=re.sub("(?<=\b)this(?=\b)","dis",a)
+			a=re.sub("na","nya",a)
+			a=re.sub("th","f",a)
+			a=re.sub("(?<![b-df-hj-np-tv-xzB-DF-HJ-NP-TV-XZ])u","wu",a)
+			a=re.sub("y","yie",a)
+			a=re.sub("(?<![aeiouAEIOU])e[iya]","yei",a)
+			a=re.sub("(?<![aeiouAEIOU])ie","yie",a)
+			a=re.sub("(?<![aeiouAEIOU])a[e]","yae",a)
+			a=re.sub("(?<![aeiouAEIOU])ai","yai",a)
+			a=re.sub("(?<![aeiouAEIOU])o[ou]","yu",a)
+			a=re.sub("(?<![aeiouAEIOU])oe","yo",a)
+			a=re.sub("(?<![aeiouAEIOU])u[eu]","yeu",a)
+			a=re.sub("(?<![aeiouAEIOU])e[u]","yeu",a)
+			a=re.sub("o[uo]","ew",a)
+			print(a)
+		except EOFError:
+			b=1
 
-a=`echo $a | sed 's/pretty|beautiful/pretti/g'`
-a=`echo $a | sed 's/rl/w/g'`
-a=`echo $a | sed 's/r/w/g'`
-a=`echo $a | sed 's/l/w/g'`
-a=`echo $a | sed 's/ow/ao/g'`
-a=`echo $a | sed 's/\bthis\b/dis/g'`
-a=`echo $a | sed 's/na/nya/g'`
-a=`echo $a | sed 's/(?<![b-df-hj-np-tv-xzB-DF-HJ-NP-TV-XZ])u/wu/g'`
-a=`echo $a | sed 's/y/yie/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])e[iya]/yei/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])ie/yie/g' `
-a=`echo $a | sed 's/(?<![aeiouAEIOU])a[e]/yae/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])ai/yai/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])o[ou]/yu/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])oe/yo/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])u[eu]/yeu/g'`
-a=`echo $a | sed 's/(?<![aeiouAEIOU])e[u]/yeu/g'`
-echo $a | sed 's/o[uo]/ew/g'
