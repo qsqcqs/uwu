@@ -1,7 +1,7 @@
 # Maintainer: imoutocon
 pkgname='uwu-qwq'
-pkgver=1.0
-pkgrel=1
+pkgver=1.1
+pkgrel=2
 pkgdesc="uwu for terminal"
 arch=('x86_64')
 url="https://github.com/qsqcqs/uwu"
